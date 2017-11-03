@@ -4,10 +4,10 @@
     {{title}}
   </h1>
   
-<button (click)='get_PST()'>PST</button>
-<button (click)='get_CST()'>CST</button>
-<button (click)='get_MST()'>MST</button>
-<button (click)='get_EST()'>EST</button>
+<button (click)="get_time('PST')">PST</button>
+<button (click)="get_time('CST')">CST</button>
+<button (click)="get_time('MST')">MST</button>
+<button (click)="get_time('EST')">EST</button>
 <button (click)='clear()'>Clear</button>
 <h3 *ngIf = '!isClear'>{{time | date:'fullDate'}} {{time | date:'shortTime'}}</h3>
 

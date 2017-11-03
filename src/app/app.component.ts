@@ -10,27 +10,18 @@ export class AppComponent {
   time: any;
   isClear = false;
 
-  get_PST() {
+  get_time(zone) {
     this.isClear = false;
     this.time = new Date();
-  }
-
-  get_EST() {
-    this.isClear = false;
-    this.time = new Date();
-    this.time.setHours(this.time.getHours() + 3);
-  }
-
-  get_CST() {
-    this.isClear = false;
-    this.time = new Date();
-    this.time.setHours(this.time.getHours() + 1);
-  }
-
-  get_MST() {
-    this.isClear = false;
-    this.time = new Date();
-    this.time.setHours(this.time.getHours() + 2);
+    if (zone === 'PST') {
+      this.time = this.time;
+    }else if (zone === 'EST') {
+      this.time.setHours(this.time.getHours() + 3);
+    } else if (zone === 'MST') {
+      this.time.setHours(this.time.getHours() + 2);
+    } else if (zone === 'CST') {
+      this.time.setHours(this.time.getHours() + 1);
+    }
   }
 
   clear() {
